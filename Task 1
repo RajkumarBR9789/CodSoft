@@ -1,0 +1,28 @@
+tasks = {}
+def add_task():
+    task_name = input("Enter task name: ")
+    task_priority = input("Enter task priority (High, Medium, Low): ")
+    tasks[task_name] = task_priority
+    print("Task added successfully!")
+
+def view_tasks():
+    if not tasks:
+        print("No tasks available.")
+    else:
+        print("Tasks:")
+        for task, priority in tasks.items():
+            print(f"- {task} (Priority: {priority})")
+
+while True:
+    print("\n1. Add Task\n2. View Tasks\n3. Exit")
+    choice = input("Enter your choice (1/2/3): ")
+
+    if choice == '1':
+        add_task()
+    elif choice == '2':
+        view_tasks()
+    elif choice == '3':
+        print("Exiting program. Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please enter 1, 2, or 3.")
